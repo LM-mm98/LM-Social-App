@@ -10,6 +10,6 @@ target 'Social App' do
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-
+  pod 'FBSDKLoginKit'
 
 end

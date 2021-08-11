@@ -62,16 +62,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-Ie-oRk" customClass="RoundButton" customModule="Social_App" customModuleProvider="target">
-                                <rect key="frame" x="125" y="337" width="140" height="140"/>
+                                <rect key="frame" x="125" y="317" width="140" height="140"/>
                                 <color key="backgroundColor" red="0.32902669909999999" green="0.44260671730000001" blue="0.70627552270000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="mTq-M8-wUz"/>
                                     <constraint firstAttribute="width" constant="140" id="vZg-7f-FZz"/>
                                 </constraints>
                                 <state key="normal" image="f"/>
+                                <connections>
+                                    <action selector="FBLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XfC-cd-lMG"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-hR-S0M">
-                                <rect key="frame" x="40" y="527" width="310" height="135.33333333333337"/>
+                                <rect key="frame" x="40" y="486.99999999999994" width="310" height="135.33333333333331"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBO-Tb-maX" customClass="FancyField" customModule="Social_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="27.666666666666668"/>
@@ -104,8 +107,8 @@
                             <constraint firstItem="yjJ-fp-Ylb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bu5-KD-ZpS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yjJ-fp-Ylb" secondAttribute="trailing" id="CId-aN-pFe"/>
                             <constraint firstItem="NK9-hR-S0M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="IfQ-fs-FaO"/>
-                            <constraint firstItem="NK9-hR-S0M" firstAttribute="top" secondItem="5nU-Ie-oRk" secondAttribute="bottom" constant="50" id="Mm2-N3-36b"/>
-                            <constraint firstItem="5nU-Ie-oRk" firstAttribute="top" secondItem="ImB-TP-cDh" secondAttribute="bottom" constant="50" id="OzA-J7-9Am"/>
+                            <constraint firstItem="NK9-hR-S0M" firstAttribute="top" secondItem="5nU-Ie-oRk" secondAttribute="bottom" constant="30" id="Mm2-N3-36b"/>
+                            <constraint firstItem="5nU-Ie-oRk" firstAttribute="top" secondItem="ImB-TP-cDh" secondAttribute="bottom" constant="30" id="OzA-J7-9Am"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NK9-hR-S0M" secondAttribute="trailing" constant="40" id="S4h-BJ-Jj6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="heX-Pw-Zcq" secondAttribute="bottom" constant="-34" id="WC7-5M-0hU"/>
                             <constraint firstItem="ImB-TP-cDh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hIa-af-tlD"/>
