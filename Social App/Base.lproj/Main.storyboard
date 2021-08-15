@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="Social_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjJ-fp-Ylb" customClass="FancyView" customModule="Social_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="-6" width="390" height="240"/>
+                                <rect key="frame" x="0.0" y="-50" width="390" height="240"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes-logo" translatesAutoresizingMaskIntoConstraints="NO" id="WlA-6e-mWm">
                                         <rect key="frame" x="105" y="85" width="180" height="100"/>
@@ -35,7 +35,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heX-Pw-Zcq">
-                                <rect key="frame" x="0.0" y="724" width="390" height="120"/>
+                                <rect key="frame" x="0.0" y="670" width="390" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account will be created automatically after your first sign in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inc-V9-pff">
                                         <rect key="frame" x="8" y="35.333333333333371" width="374" height="49.333333333333343"/>
@@ -53,7 +53,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImB-TP-cDh">
-                                <rect key="frame" x="0.0" y="259" width="390" height="28"/>
+                                <rect key="frame" x="0.0" y="215" width="390" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="0cm-Lb-BvW"/>
                                 </constraints>
@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-Ie-oRk" customClass="RoundButton" customModule="Social_App" customModuleProvider="target">
-                                <rect key="frame" x="125" y="317" width="140" height="140"/>
+                                <rect key="frame" x="125" y="273" width="140" height="140"/>
                                 <color key="backgroundColor" red="0.32902669909999999" green="0.44260671730000001" blue="0.70627552270000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="mTq-M8-wUz"/>
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-hR-S0M">
-                                <rect key="frame" x="40" y="487.00000000000006" width="310" height="133.66666666666669"/>
+                                <rect key="frame" x="40" y="443" width="310" height="133.66666666666663"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBO-Tb-maX" customClass="FancyField" customModule="Social_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="27.666666666666668"/>
@@ -83,7 +83,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="18W-uP-2j9" customClass="FancyField" customModule="Social_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="47.666666666666629" width="310" height="26"/>
+                                        <rect key="frame" x="0.0" y="47.666666666666686" width="310" height="26"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -122,14 +122,51 @@
                             <constraint firstItem="5nU-Ie-oRk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xmZ-mO-iFg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KIr-ks-NFt"/>
                     <connections>
                         <outlet property="emailField" destination="rBO-Tb-maX" id="zrQ-fg-w6D"/>
                         <outlet property="passwordField" destination="18W-uP-2j9" id="gV5-uD-hu4"/>
+                        <segue destination="fXD-7l-mzx" kind="show" identifier="goToFeed" id="UaL-Ct-6Yd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="71.651785714285708"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="Ppo-9U-gC6">
+            <objects>
+                <viewController id="fXD-7l-mzx" customClass="FeedVC" customModule="Social_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qIF-Ly-zL3">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znr-f4-It7">
+                                <rect key="frame" x="157" y="377" width="76" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutTap:" destination="fXD-7l-mzx" eventType="touchUpInside" id="0wQ-Nn-JlH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c47-WN-n9l"/>
+                        <color key="backgroundColor" red="0.3750469387" green="0.49010676149999999" blue="0.54719847440000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="znr-f4-It7" firstAttribute="centerY" secondItem="qIF-Ly-zL3" secondAttribute="centerY" id="bF4-nm-m52"/>
+                            <constraint firstItem="znr-f4-It7" firstAttribute="centerX" secondItem="qIF-Ly-zL3" secondAttribute="centerX" id="fLh-Bd-6Vn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CW6-on-trF"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignin" id="uC5-ev-GzN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x9X-bF-WCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="71"/>
         </scene>
     </scenes>
     <resources>

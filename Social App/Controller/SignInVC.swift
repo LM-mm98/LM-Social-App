@@ -9,6 +9,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
 
@@ -19,10 +20,13 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        let loginButton = FBLoginButton()
-//                loginButton.center = view.center
-//                view.addSubview(loginButton)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: keyUid) {
+            print("ID not found in KEychain")
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
     }
 
     @IBAction func FBLogin(_ sender: Any) {
@@ -46,6 +50,9 @@ class SignInVC: UIViewController {
                 print("Unable to Auth with Firebase - \(error) ")
             }else {
                 print("Successfully Auth with Firebase")
+                if let userID = Auth.auth().currentUser?.uid {
+                    self.completeSignIn(userID : userID)
+                }
             }
         })
     }
@@ -53,15 +60,21 @@ class SignInVC: UIViewController {
     @IBAction func signInTap(_ sender: Any) {
         if let email = emailField.text,
            let passowrd = passwordField.text {
-            Auth.auth().createUser(withEmail: email, password: passowrd, completion: { (user , error) in
-                if error != nil {
+            Auth.auth().signIn(withEmail: email, password: passowrd, completion: { (user , error) in
+                if user != nil {
                     print("Email User Auth with Firebase")
+                    if let userID = Auth.auth().currentUser?.uid {
+                        self.completeSignIn(userID : userID)
+                    }
                 }else {
-                    Auth.auth().signIn(withEmail: email, password: passowrd, completion: { ( user, error ) in
+                    Auth.auth().createUser(withEmail: email, password: passowrd, completion: { ( user, error ) in
                         if error != nil {
                             print("Unable to Auth Firebase with Email")
                         }else {
                             print("Successfully Auth with Firebase")
+                            if let userID = Auth.auth().currentUser?.uid {
+                                self.completeSignIn(userID : userID)
+                            }
                         }
                     })
                 }
@@ -69,5 +82,12 @@ class SignInVC: UIViewController {
         }
     }
     
+    func completeSignIn(userID: String) {
+        let keychainResult = KeychainWrapper.standard.set(userID, forKey: keyUid)
+            print("Data saved to keychain \(keychainResult)")
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
 }
+    
+
 
