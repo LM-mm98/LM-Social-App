@@ -18,6 +18,9 @@
 		044DBE1D26BE464100001C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044DBE1B26BE464100001C48 /* Main.storyboard */; };
 		044DBE1F26BE464400001C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044DBE1E26BE464400001C48 /* Assets.xcassets */; };
 		044DBE2226BE464400001C48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044DBE2026BE464400001C48 /* LaunchScreen.storyboard */; };
+		0482493A26C95F450088163E /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482493826C95F450088163E /* FeedTableViewCell.swift */; };
+		0482493B26C95F450088163E /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0482493926C95F450088163E /* FeedTableViewCell.xib */; };
+		0482493D26C9731F0088163E /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482493C26C9731F0088163E /* CircleImageView.swift */; };
 		049010DC26C4EFC800EC690B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049010DB26C4EFC800EC690B /* GoogleService-Info.plist */; };
 		049010DE26C5356000EC690B /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049010DD26C5356000EC690B /* FeedVC.swift */; };
 		D00AC5A60CB23091A7575C2B /* Pods_Social_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A175F6BF4E9EF69FBEA4D17D /* Pods_Social_App.framework */; };
@@ -38,6 +41,9 @@
 		044DBE2126BE464400001C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044DBE2326BE464400001C48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045D0EB426C43EE200E07109 /* Social App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Social App.entitlements"; sourceTree = "<group>"; };
+		0482493826C95F450088163E /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		0482493926C95F450088163E /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		0482493C26C9731F0088163E /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		049010DB26C4EFC800EC690B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		049010DD26C5356000EC690B /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		A175F6BF4E9EF69FBEA4D17D /* Pods_Social_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +122,7 @@
 				040E226326BECB2900FC1C52 /* RoundButton.swift */,
 				040E226526BECBEF00FC1C52 /* FancyField.swift */,
 				040E226926BECFFD00FC1C52 /* SignInButton.swift */,
+				0482493C26C9731F0088163E /* CircleImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +132,8 @@
 			children = (
 				044DBE1926BE464100001C48 /* SignInVC.swift */,
 				049010DD26C5356000EC690B /* FeedVC.swift */,
+				0482493826C95F450088163E /* FeedTableViewCell.swift */,
+				0482493926C95F450088163E /* FeedTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044DBE2226BE464400001C48 /* LaunchScreen.storyboard in Resources */,
+				0482493B26C95F450088163E /* FeedTableViewCell.xib in Resources */,
 				044DBE1F26BE464400001C48 /* Assets.xcassets in Resources */,
 				044DBE1D26BE464100001C48 /* Main.storyboard in Resources */,
 				049010DC26C4EFC800EC690B /* GoogleService-Info.plist in Resources */,
@@ -261,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0482493D26C9731F0088163E /* CircleImageView.swift in Sources */,
 				049010DE26C5356000EC690B /* FeedVC.swift in Sources */,
 				040E226426BECB2900FC1C52 /* RoundButton.swift in Sources */,
 				040E226A26BECFFD00FC1C52 /* SignInButton.swift in Sources */,
@@ -270,6 +281,7 @@
 				040E225D26BEB48500FC1C52 /* FancyView.swift in Sources */,
 				040E226626BECBEF00FC1C52 /* FancyField.swift in Sources */,
 				044DBE1826BE464100001C48 /* SceneDelegate.swift in Sources */,
+				0482493A26C95F450088163E /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
