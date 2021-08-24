@@ -32,6 +32,10 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        DataService.dataService.reference_Posts.observe(.value, with: { (snapshot) in
+            print(snapshot.value)
+        })
     }
     
     @IBAction func signOutTap(_ sender: Any) {
