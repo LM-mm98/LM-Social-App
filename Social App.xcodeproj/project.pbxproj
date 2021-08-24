@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040C37FA26CC02ED000552E7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C37F926CC02ED000552E7 /* DataService.swift */; };
 		040E225D26BEB48500FC1C52 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E225C26BEB48500FC1C52 /* FancyView.swift */; };
 		040E226026BEB55600FC1C52 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E225F26BEB55600FC1C52 /* Constants.swift */; };
 		040E226426BECB2900FC1C52 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E226326BECB2900FC1C52 /* RoundButton.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040C37F926CC02ED000552E7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		040E225C26BEB48500FC1C52 /* FancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		040E225F26BEB55600FC1C52 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		040E226326BECB2900FC1C52 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040C37F826CC02D0000552E7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				040C37F926CC02ED000552E7 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		040E225E26BEB53E00FC1C52 /* Ulti */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 		044DBE0926BE464100001C48 = {
 			isa = PBXGroup;
 			children = (
+				040C37F826CC02D0000552E7 /* Services */,
 				044DBE1426BE464100001C48 /* Social App */,
 				044DBE1326BE464100001C48 /* Products */,
 				D8258C2194F3ECF0E4BFCD90 /* Pods */,
@@ -274,6 +285,7 @@
 				0482493D26C9731F0088163E /* CircleImageView.swift in Sources */,
 				049010DE26C5356000EC690B /* FeedVC.swift in Sources */,
 				040E226426BECB2900FC1C52 /* RoundButton.swift in Sources */,
+				040C37FA26CC02ED000552E7 /* DataService.swift in Sources */,
 				040E226A26BECFFD00FC1C52 /* SignInButton.swift in Sources */,
 				040E226026BEB55600FC1C52 /* Constants.swift in Sources */,
 				044DBE1A26BE464100001C48 /* SignInVC.swift in Sources */,

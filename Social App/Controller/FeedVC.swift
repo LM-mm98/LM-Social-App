@@ -38,7 +38,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: keyUid)
         print("ID removed from KeyChain \(keychainResult)")
         try! Auth.auth().signOut()
-        performSegue(withIdentifier: "goToSignin", sender: nil)
+//        performSegue(withIdentifier: "goToSignin", sender: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

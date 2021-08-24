@@ -19,16 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>social-app-fdbaf.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:598058188952:ios:914ac330da9c94a823d0ed</string>
+	<key>DATABASE_URL </key>
+	<string>https://social-app-fdbaf-default-rtdb.firebaseio.com/</string>
 </dict>
 </plist>
