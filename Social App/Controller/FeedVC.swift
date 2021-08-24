@@ -9,7 +9,7 @@ import UIKit
 import SwiftKeychainWrapper
 import Firebase
 
-class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ImagePickerDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -32,7 +32,10 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var feedTableView: UITableView!
     
+    @IBOutlet weak var addImage: CircleImageView!
+    
     var posts = [Post]()
+    var imagePicker : ImagePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,11 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+//        imagePicker = UIImagePickerController()
+//        imagePicker.allowsEditing = true
+//        imagePicker.delegate = self
         
         DataService.dataService.reference_Posts.observe(.value, with: { (snapshot) in
 //            print(snapshot.value)
@@ -55,6 +63,20 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
             self.feedTableView.reloadData()
         })
+    }
+    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let image = info[UIImagePickerController] as? UIImage {
+//
+//        }
+//        imagePicker.dismiss(animated: true, completion: nil)
+//    }
+    func didSelect(image: UIImage?) {
+        self.addImage.image = image
+    }
+    
+    @IBAction func addimageTap(_ sender: UITapGestureRecognizer) { //tapguster
+        self.imagePicker.present()
     }
     
     @IBAction func signOutTap(_ sender: Any) {
