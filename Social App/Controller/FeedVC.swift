@@ -18,9 +18,14 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Imag
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.row]
-        print("\(post.caption)")
+//        print("\(post.caption)")
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedTableViewCell {
+            if let image = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                cell.configureCell(post: post, image: image)
+            }else {
+                
+            }
             cell.configureCell(post: post)
             return cell
         }else {
@@ -36,6 +41,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Imag
     
     var posts = [Post]()
     var imagePicker : ImagePicker!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
