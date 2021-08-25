@@ -24,9 +24,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Imag
             if let image = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 cell.configureCell(post: post, image: image)
             }else {
-                
+                cell.configureCell(post: post)
             }
-            cell.configureCell(post: post)
             return cell
         }else {
             return UITableViewCell() }
@@ -34,14 +33,15 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Imag
     
     
     @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var feedTableView: UITableView!
-    
     @IBOutlet weak var addImage: CircleImageView!
+    @IBOutlet weak var captionField: UITextField!
+    
     
     var posts = [Post]()
     var imagePicker : ImagePicker!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected = false 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +51,9 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Imag
         tableView.dataSource = self
         
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
-//        imagePicker = UIImagePickerController()
-//        imagePicker.allowsEditing = true
-//        imagePicker.delegate = self
         
         DataService.dataService.reference_Posts.observe(.value, with: { (snapshot) in
-//            print(snapshot.value)
+            self.posts = []
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     print("SNAP: \(snap)")
@@ -67,22 +64,62 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Imag
                     }
                 }
             }
+            self.posts.reverse()
             self.feedTableView.reloadData()
         })
     }
     
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let image = info[UIImagePickerController] as? UIImage {
-//
-//        }
-//        imagePicker.dismiss(animated: true, completion: nil)
-//    }
+
     func didSelect(image: UIImage?) {
+        imageSelected = true
         self.addImage.image = image
     }
     
     @IBAction func addimageTap(_ sender: UITapGestureRecognizer) { //tapguster
         self.imagePicker.present()
+    }
+    
+    @IBAction func postBtnTap(_ sender: Any) {
+        guard let caption = captionField.text, caption != "" else {
+            print("CaptionField is Empty")
+            return
+        }
+        guard let image = addImage.image, imageSelected == true else {
+            print("Image not selected")
+            return
+        }
+        if let imageData = image.jpegData(compressionQuality: 0.2) {
+            let imageUid = NSUUID().uuidString
+            let storageRef = DataService.dataService.reference_Post_Images.child(imageUid)
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            storageRef.putData(imageData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print("Unable to upload image to Firebase Storage")
+                }else {
+                    print("Successfully uploaded image to Firebase Storage")
+                    storageRef.downloadURL { (url, error ) in
+                        guard let downloadURL = url?.absoluteString else { return }
+                        self.postToFirebase(imageUrl: downloadURL)
+                    }
+                }
+            }
+        }
+    }
+    
+    func postToFirebase(imageUrl: String) {
+        let post : Dictionary<String, Any> = [
+            "caption": captionField.text!,
+            "imageUrl": imageUrl,
+            "likes": 0 ]
+        let firebasePost = DataService.dataService.reference_Posts.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        addImage.image = UIImage(named: "add-image")
+        
+        feedTableView.reloadData()
     }
     
     @IBAction func signOutTap(_ sender: Any) {

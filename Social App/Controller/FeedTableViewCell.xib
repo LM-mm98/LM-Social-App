@@ -55,6 +55,10 @@
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="vGC-vI-yn9">
                                         <rect key="frame" x="0.0" y="68" width="616" height="292"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="616" id="d12-1K-Bte"/>
+                                            <constraint firstAttribute="height" constant="292" id="vXg-tz-7qk"/>
+                                        </constraints>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EM3-Bc-Q2u">
                                         <rect key="frame" x="0.0" y="368" width="616" height="162"/>
@@ -109,6 +113,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionText" destination="EM3-Bc-Q2u" id="KBG-pd-I0o"/>
+                <outlet property="likeImage" destination="jUM-pI-txp" id="5Gj-VN-zDk"/>
                 <outlet property="likesLbl" destination="ZSZ-wc-icv" id="8K3-ju-OyF"/>
                 <outlet property="postImg" destination="vGC-vI-yn9" id="Rr9-Of-6p3"/>
                 <outlet property="profileImg" destination="Ow5-PN-uiD" id="1n8-TV-Plv"/>
